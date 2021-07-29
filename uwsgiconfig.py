@@ -640,7 +640,7 @@ class uConf(object):
         if uwsgi_os == 'GNU':
             self.cflags.append('-D__HURD__')
 
-        gcc_version = spcall("%s -dumpversion" % GCC)
+        gcc_version = spcall("%s -dumpfullversion" % GCC)
         if not gcc_version and GCC.startswith('gcc'):
             if uwsgi_os == 'Darwin':
                 GCC = 'llvm-' + GCC
